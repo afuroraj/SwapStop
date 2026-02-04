@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapStop - Trade Local</title>
+    <link rel="stylesheet" href="stylers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-recycle"></i> SwapStop
+        </div>
+        
+        <nav>
+            <a href="index.html" class="active">Trade Local</a>
+            <a href="categories.html">Categories</a>
+            <a href="#">Overview</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+
+        <div class="auth-buttons">
+            <button class="btn-signin" onclick="handleSignIn()">Sign in</button>
+            <button class="btn btn-post" onclick="window.location.href='post.html'">Post</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero-content">
+            <h1>Swap More. Waste Less.</h1>
+            
+            <div class="search-container">
+                <input type="text" placeholder="What are you looking for?..." id="searchInput">
+                <button class="search-icon" onclick="handleSearch()">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <div id="searchResults" class="search-results-box"></div>
+            </div>
+
+            <div class="categories-container">
+                <div class="category-item">
+                    <div class="circle">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+                    <span>Electronics & Appliances</span>
+                </div>
+
+                <div class="category-item">
+                    <div class="circle">
+                        <i class="fa-solid fa-chair"></i>
+                    </div>
+                    <span>Furniture</span>
+                </div>
+
+                <div class="category-item">
+                    <div class="circle">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <span>Men's Fashion</span>
+                </div>
+
+                <div class="category-item">
+                    <div class="circle">
+                        <i class="fa-solid fa-person-dress"></i>
+                    </div>
+                    <span>Women's Fashion</span>
+                </div>
+
+                <div class="category-item">
+                    <div class="circle">
+                        <i class="fa-solid fa-book"></i>
+                    </div>
+                    <span>Books</span>
+                </div>
+
+                <div class="category-item">
+                    <div class="circle">
+                        <i class="fa-solid fa-basketball"></i>
+                    </div>
+                    <span>Sports</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <footer>
+        <p>&copy; 2025 SwapStop. Trade Local, Waste Less.</p>
+    </footer>
+</body>
+</html>

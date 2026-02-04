@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapStop - Profile</title>
+    
+    <link rel="stylesheet" href="styling.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:10px;">
+                <i class="fa-solid fa-recycle"></i> SwapStop
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Trade Local</a>
+            <a href="categories.html">Categories</a>
+            <a href="#">Overview</a>
+            <a href="profile.html" class="active">Profile</a>
+        </nav>
+            <div class="auth-buttons">
+                <button class="btn btn-signin">Sign In</button>
+                <button class="btn btn-post" onclick="window.location.href='post.html'">Post</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="profile-container">
+        
+        <aside class="activity-sidebar">
+            <div class="activity-header">
+                <h2>Your Activity</h2>
+            </div>
+            <ul class="activity-list">
+                <li><i class="fa-solid fa-money-bill-wave"></i> My Listings</li>
+                <li><i class="fa-solid fa-handshake"></i> Swap History</li>
+                <li><i class="fa-solid fa-heart"></i> Wishlist</li>
+                <li><i class="fa-solid fa-star"></i> My Reviews</li>
+            </ul>
+        </aside>
+
+        <div class="profile-content">
+            
+            <div class="profile-card">
+                <div class="profile-details-left">
+                    <h2 class="card-title">Your Profile</h2>
+                    <div class="user-info-row">
+                        <img src="aidan.jpg" alt="Your Picture" class="profile-pic">
+                        <div class="user-text">
+                            <h3 class="username">@Aidanpogi123 
+                                <span class="socials">
+                                    <i class="fa-brands fa-facebook"></i>
+                                    <i class="fa-brands fa-instagram"></i>
+                                </span>
+                            </h3>
+                            <p class="member-since">Member since: August 25, 2018</p>
+                            <a href="#" class="about-link">About Me</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-details-right">
+                    <button class="btn-edit-profile">Edit Profile</button>
+                    <div class="stats-box">
+                        <p><strong>Items posted:</strong> 13</p>
+                        <p><strong>Swaps Completed:</strong> 13</p>
+                        <div class="rating-row">
+                            <span class="rating-num">5.0</span>
+                            <span class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                            <span class="review-count">(10 Reviews)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="items-listed-card">
+                <div class="items-header-row">
+                    <h2 class="card-title">Your Items Listed</h2>
+                    <button class="btn-edit-small">Edit</button>
+                </div>
+
+                <div class="user-items-grid">
+                    <div class="user-item-card">
+                        <span class="badge-remove">Remove</span>
+                        <img src="https://images.unsplash.com/photo-1577174881658-0f30ed549adc?q=80&w=1000&auto=format&fit=crop" alt="Glasses">
+                        <div class="user-item-footer">
+                            <h4>Eyeglasses - Like New</h4>
+                            <button class="btn-swapped">Mark as Swapped</button>
+                        </div>
+                    </div>
+
+                    <div class="user-item-card">
+                        <span class="badge-remove">Remove</span>
+                        <img src="https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?q=80&w=1000&auto=format&fit=crop" alt="Printer">
+                        <div class="user-item-footer">
+                            <h4>Printer - Used</h4>
+                            <button class="btn-swapped">Mark as Swapped</button>
+                        </div>
+                    </div>
+
+                    <div class="user-item-card">
+                        <span class="badge-remove">Remove</span>
+                        <img src="https://images.unsplash.com/photo-1547119957-637f8679db1e?q=80&w=1000&auto=format&fit=crop" alt="Monitor">
+                        <div class="user-item-footer">
+                            <h4>Monitor - Like New</h4>
+                            <button class="btn-swapped">Mark as Swapped</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <i class="fa-solid fa-recycle bg-recycle-icon"></i>
+
+    <footer>
+        <p>&copy; 2025 SwapStop. Trade Local, Waste Less.</p>
+    </footer>
+
+</body>
+</html>

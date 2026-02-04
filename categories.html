@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwapStop - Categories</title>
+    <link rel="stylesheet" href="stylers.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Serif+Display&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="index.html" style="text-decoration:none; color:inherit; display:flex; align-items:center; gap:10px;">
+                <i class="fa-solid fa-recycle"></i> SwapStop
+            </a>
+        </div>
+        <nav>
+            <a href="index.html">Trade Local</a>
+            <a href="categories.html" class="active">Categories</a>
+            <a href="#">Overview</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+        <div class="header-right">
+                <button class="btn btn-signin">Sign In</button>
+                <button class="btn btn-post" onclick="window.location.href='post.html'">Post</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3><i class="fa-solid fa-bars"></i> Filter tags</h3>
+                <ul>
+                    <li>Condition <i class="fa-regular fa-circle-check"></i></li>
+                    <li>Price/Swap Type <i class="fa-solid fa-hand-holding-dollar"></i></li>
+                    <li>Distance <i class="fa-solid fa-user-group"></i></li>
+                    <li>Date Posted <i class="fa-regular fa-calendar"></i></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-section">
+                <h3><i class="fa-solid fa-bars"></i> About Us</h3>
+                <ul>
+                    <li>Our Mission</li>
+                    <li>How It Works</li>
+                    <li>FAQ</li>
+                    <li>Contact Us <i class="fa-solid fa-phone"></i></li>
+                </ul>
+            </div>
+            
+            <div class="sidebar-bg-icon"><i class="fa-solid fa-recycle"></i></div>
+        </aside>
+
+        <section class="content-area">
+            
+            <div class="top-bar">
+                <div class="location-pill">
+                    <i class="fa-solid fa-location-dot"></i> Baguio
+                </div>
+                <div class="big-search">
+                    <input type="text" id="categorySearchInput" placeholder="What are you looking for?...">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </div>
+
+            <h2 class="section-title">Electronics</h2>
+
+            <div class="carousel-wrapper">
+                <button class="scroll-btn left-btn" id="scrollLeftBtn">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="product-scroll" id="productScrollContainer">
+    
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=1887&auto=format&fit=crop" alt="Laptop">
+        <h4>Dell Latitude 5580</h4>
+        <p>Used - Like New</p>
+        <button class="btn-details" onclick="window.location.href='product.html?id=dell'">View Details</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=2070&auto=format&fit=crop" alt="PS4">
+        <h4>PS4 Slim 500GB</h4>
+        <p>Used - Like New</p>
+        <button class="btn-details" onclick="window.location.href='product.html?id=ps4'">View Details</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1567581935884-3349723552ca?q=80&w=1974&auto=format&fit=crop" alt="Phone">
+        <h4>Cherry Mobile Nova 2</h4>
+        <p>Brand New</p>
+        <button class="btn-details" onclick="window.location.href='product.html?id=cherry'">View Details</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?q=80&w=2070&auto=format&fit=crop" alt="GPU">
+        <h4>RTX 2060 Super 8GB</h4>
+        <p>Slightly Used</p>
+        <button class="btn-details" onclick="window.location.href='product.html?id=gpu'">View Details</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1547119957-637f8679db1e?q=80&w=1964&auto=format&fit=crop" alt="Monitor">
+        <h4>Dell LCD Monitor</h4>
+        <p>Used - Like New</p>
+        <button class="btn-details" onclick="window.location.href='product.html?id=monitor'">View Details</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=2000&auto=format&fit=crop" alt="Macbook">
+        <h4>Macbook Air</h4>
+        <p>Used - Good</p>
+        <button class="btn-details" onclick="window.location.href='product.html?id=macbook'">View Details</button>
+    </div>
+
+    <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=2030&auto=format&fit=crop" alt="iPad">
+        <h4>iPad Pro 11"</h4>
+        <p>Used - Fair</p>
+        <button class="btn-details" onclick="window.location.href='product.html?id=ipad'">View Details</button>
+    </div>
+
+</div>
+  
+
+                <button class="scroll-btn right-btn" id="scrollRightBtn">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+            <h2 class="section-title">Categories</h2>
+            <div class="mini-categories">
+                <div class="mini-cat">
+                    <div class="circle small"><i class="fa-solid fa-laptop"></i></div>
+                    <span>Electronics</span>
+                </div>
+                <div class="mini-cat">
+                    <div class="circle small"><i class="fa-solid fa-chair"></i></div>
+                    <span>Furniture</span>
+                </div>
+                <div class="mini-cat">
+                    <div class="circle small"><i class="fa-solid fa-user-tie"></i></div>
+                    <span>Men's Fashion</span>
+                </div>
+                <div class="mini-cat">
+                    <div class="circle small"><i class="fa-solid fa-person-dress"></i></div>
+                    <span>Women's Fashion</span>
+                </div>
+                <div class="mini-cat">
+                    <div class="circle small"><i class="fa-solid fa-book"></i></div>
+                    <span>Books</span>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+<footer>
+        <p>&copy; 2025 SwapStop. Trade Local, Waste Less.</p>
+    </footer>
+</body>
+</html>
