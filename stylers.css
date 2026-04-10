@@ -226,7 +226,9 @@ h1 {
 }
 
 .sidebar-section {
-    margin-bottom: 30px;
+    margin-bottom: 0; /* Align row-based items */
+        width: calc(50% - 10px); /* Fit two sections per row */
+        max-width: 250px; /* Preserve general structure */
 }
 
 .sidebar-section h3 {
@@ -534,16 +536,30 @@ footer {
         flex-direction: column;
     }
    .sidebar {
-    width: 250px;
-    background-color: #2b3d2b;
-    color: white;
-    padding: 20px;
-    flex-shrink: 0;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    overflow-y: auto;
-}
+    width: 100%; /* Make full width on mobile */
+        position: static; /* Remove absolute/sticky behavior */
+        height: auto; /* Remove the 100vh restriction */
+        overflow-y: visible; /* Ensure content is accessible */
+        padding: 20px;
+        display: flex; /* Turn sidebar into a row */
+        flex-wrap: wrap; /* Stack sections if needed */
+        justify-content: center; /* Center the sections */
+        gap: 20px;
+        border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+    .sidebar-section {
+        margin-bottom: 0; /* Align row-based items */
+        width: calc(50% - 10px); /* Fit two sections per row */
+        max-width: 250px; /* Preserve general structure */
+    }
+
+    .content-area {
+        flex: 1; 
+        padding: 30px 20px; /* Reduce large padding */
+        background-color: #e8ded1;
+        width: 100%;
+    }
+    
     .top-bar {
         display: flex;
         gap: 20px;
