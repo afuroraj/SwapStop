@@ -1,3 +1,8 @@
+/* ============================================================
+   SwapStop - Core Stylesheet (Responsive Overhaul)
+   ============================================================ */
+
+/* --- 1. Global Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -5,16 +10,26 @@
     font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
-body {
+/* --- 2. Base Document Structure --- */
+html, body {
+    /* CRITICAL RESET: Total shutdown of horizontal overflow, force fit-to-screen */
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; 
+    position: relative;
     background-color: #e8ded1;
     color: #2b3d2b;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;
-    width: 100%;
 }
 
+/* Force all children to respect parent container widths */
+* {
+    max-width: 100% !important;
+}
+
+/* --- 3. Header and Navigation --- */
 header {
     display: flex;
     justify-content: space-between;
@@ -52,7 +67,8 @@ nav a {
     font-size: 16px;
     text-transform: uppercase;
     border-bottom: 2px solid transparent;
-    white-space: nowrap;
+    /* nowrap culprit: handled by media queries */
+    white-space: nowrap; 
 }
 
 nav a:hover {
@@ -92,6 +108,7 @@ button {
     color: white;
 }
 
+/* --- 4. Main Hero Content Area --- */
 main {
     flex: 1;
     display: flex;
@@ -123,6 +140,7 @@ h1 {
 }
 
 .search-container {
+    position: relative; /* Search results support */
     background-color: #2b3d2b;
     padding: 8px;
     border-radius: 40px;
@@ -162,6 +180,7 @@ h1 {
     flex-shrink: 0;
 }
 
+/* --- 5. Homepage Categories (Flex) --- */
 .categories-container {
     display: flex;
     justify-content: center;
@@ -210,11 +229,17 @@ h1 {
     background-color: #354a35;
 }
 
+/* ============================================================
+   Page-Specific Layouts (Categories/Profile)
+   ============================================================ */
+
+/* --- 6. Main Container (Sidebar/Content) --- */
 .main-container {
     display: flex;
     min-height: 100vh;
 }
 
+/* --- 7. Sidebar (Categories Page) --- */
 .sidebar {
     width: 250px;
     background-color: #2b3d2b;
@@ -226,9 +251,7 @@ h1 {
 }
 
 .sidebar-section {
-    margin-bottom: 0; /* Align row-based items */
-        width: calc(50% - 10px); /* Fit two sections per row */
-        max-width: 250px; /* Preserve general structure */
+    margin-bottom: 30px;
 }
 
 .sidebar-section h3 {
@@ -271,12 +294,12 @@ h1 {
     transform: rotate(45deg);
 }
 
+/* --- 8. Content Area (Categories Page) --- */
 .content-area {
     flex: 1;
     padding: 30px 50px;
     background-color: #e8ded1;
     min-width: 0; 
-    
     width: 100%;
 }
 
@@ -335,11 +358,18 @@ h1 {
     margin-bottom: 30px; 
 }
 
+/* --- 9. Carousel/Product Scroll (Categories Page) --- */
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .product-scroll {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    padding-bottom: 20px;
+    padding: 20px 60px; /* Carousel padding fix */
     margin-bottom: 50px;
     scroll-behavior: smooth;
     scrollbar-width: none;
@@ -352,7 +382,6 @@ h1 {
 
 .product-card {
     flex: 0 0 auto;
-    
     min-width: 220px;
     background: white;
     border-radius: 15px;
@@ -360,7 +389,6 @@ h1 {
     text-align: center;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     transition: transform 0.2s;
-    
     display: flex;
     flex-direction: column;
 }
@@ -399,8 +427,36 @@ h1 {
     width: 100%;
 }
 
+.scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2b3d2b;
+    color: white;
+    border: 2px solid #f3efe7;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.2s;
+}
+
+.left-btn {
+    left: 10px; 
+}
+
+.right-btn {
+    right: 10px; 
+}
+
+/* --- 10. Mini Categories (Categories Page) --- */
 .mini-categories { 
-   display: flex; 
+    display: flex; 
     justify-content: flex-start;
     gap: 60px; 
     flex-wrap: wrap; 
@@ -451,214 +507,7 @@ h1 {
     color: #d88e5d;
 }
 
-.carousel-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.product-scroll {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none;
-    
-    padding: 20px 60px; 
-}
-
-.scroll-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #2b3d2b;
-    color: white;
-    border: 2px solid #f3efe7;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.2s;
-}
-
-.left-btn {
-    left: 10px; 
-}
-
-.right-btn {
-    right: 10px; 
-}
-
-footer {
-    margin-top: auto; 
-    padding: 20px;
-    background-color: #2b3d2b;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-@media (max-width: 900px) {
-    header {
-        padding: 15px 20px;
-    }
-
-    nav {
-        order: 3; 
-        width: 100%;
-        margin-top: 10px;
-        justify-content: center;
-        gap: 15px;
-    }
-
-    .header-right, .auth-buttons {
-        order: 2; 
-    }
-
-    nav a {
-        font-size: 14px;
-        margin: 0 8px;
-    }
-
-    button {
-        padding: 8px 16px;
-        font-size: 12px;
-    }
-
-    .main-container {
-        flex-direction: column;
-    }
-   .sidebar {
-    width: 100%; /* Make full width on mobile */
-        position: static; /* Remove absolute/sticky behavior */
-        height: auto; /* Remove the 100vh restriction */
-        overflow-y: visible; /* Ensure content is accessible */
-        padding: 20px;
-        display: flex; /* Turn sidebar into a row */
-        flex-wrap: wrap; /* Stack sections if needed */
-        justify-content: center; /* Center the sections */
-        gap: 20px;
-        border-bottom: 2px solid rgba(255,255,255,0.2);
-    }
-    .sidebar-section {
-        margin-bottom: 0; /* Align row-based items */
-        width: calc(50% - 10px); /* Fit two sections per row */
-        max-width: 250px; /* Preserve general structure */
-    }
-
-    .content-area {
-        flex: 1; 
-        padding: 30px 20px; /* Reduce large padding */
-        background-color: #e8ded1;
-        width: 100%;
-    }
-    
-    .top-bar {
-        display: flex;
-        gap: 20px;
-        margin-bottom: 40px;
-        align-items: center;
-    }
-    .scroll-btn {
-        display: none;
-    }
-    .carousel-wrapper {
-        margin: 0 -20px;
-        padding: 0 20px;
-    }
-}
-
-.search-container {
-    position: relative; 
-}
-
-.search-results-box {
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    width: 100%;
-    background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    z-index: 999;
-    max-height: 300px;
-    overflow-y: auto;
-    display: none; 
-    margin-top: 10px;
-    text-align: left;
-}
-
-.search-result-item {
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-    transition: background 0.2s;
-    text-decoration: none;
-    color: #333;
-}
-
-.search-result-item:hover {
-    background-color: #f3efe7;
-}
-
-.search-result-item img {
-    width: 40px;
-    height: 40px;
-    border-radius: 5px;
-    object-fit: cover;
-    margin-right: 15px;
-}
-
-.search-result-item h4 {
-    font-size: 14px;
-    margin: 0;
-    font-weight: bold;
-    color: #2b3d2b;
-}
-
-.search-result-item span {
-    font-size: 12px;
-    color: #777;
-}
-
-
-@media (max-width: 600px) {
-    .search-container {
-        width: 95%;
-        margin-bottom: 40px;
-    }
-
-    .categories-container {
-        gap: 15px;
-    }
-
-    .category-item {
-        width: 45%;
-    }
-    
-    .circle {
-        width: 70px;
-        height: 70px;
-    }
-
-    .circle i {
-        font-size: 28px;
-    }
-    
-    .category-item span {
-        font-size: 13px;
-    }
-}
-
+/* --- 11. Profile Page Specific --- */
 .profile-container {
     display: flex;
     padding: 40px 5%;
@@ -927,6 +776,58 @@ footer {
     background-color: #ddd;
 }
 
+/* --- 12. Miscellaneous/Search/BG icons --- */
+.search-results-box {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    z-index: 999;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none; 
+    margin-top: 10px;
+    text-align: left;
+}
+
+.search-result-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-decoration: none;
+    color: #333;
+}
+
+.search-result-item:hover {
+    background-color: #f3efe7;
+}
+
+.search-result-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.search-result-item h4 {
+    font-size: 14px;
+    margin: 0;
+    font-weight: bold;
+    color: #2b3d2b;
+}
+
+.search-result-item span {
+    font-size: 12px;
+    color: #777;
+}
+
 .bg-recycle-icon {
     position: fixed;
     bottom: -50px;
@@ -937,9 +838,118 @@ footer {
     transform: rotate(45deg);
 }
 
+/* --- 13. Footer --- */
+footer {
+    margin-top: auto; 
+    padding: 20px;
+    background-color: #2b3d2b;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ============================================================
+   SECTION 14. MEDIA QUERIES (Mobile-First Consolidation)
+   ============================================================ */
+
+/* --- Medium Screens (Tablet/Landscape) (< 900px) --- */
 @media (max-width: 900px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    nav {
+        order: 3; 
+        width: 100%;
+        margin-top: 10px;
+        justify-content: center;
+        gap: 15px; /* Organization fix */
+    }
+
+    .header-right, .auth-buttons {
+        order: 2; 
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 0 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    /* Reflow Sidebar-Content container vertically */
+    .main-container {
+        flex-direction: column; 
+    }
+
+    /* Sidebar: Natural flow, remove 100vh/sticky, stack items vertically */
+    .sidebar {
+        width: 100%;
+        max-width: 100%;
+        position: static; 
+        height: auto;
+        overflow-y: visible;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-around;
+        padding: 20px 10px;
+        gap: 15px;
+    }
+    
+    .sidebar-section {
+        margin-bottom: 0;
+        width: calc(50% - 10px); /* Flow two per row on tablet */
+        max-width: none;
+    }
+
+    /* Content Area: Reduce large padding, full width */
+    .content-area {
+        flex: 1; 
+        padding: 30px 15px; 
+        width: 100%;
+    }
+    
+    .top-bar {
+        flex-direction: column; /* Baguio/Search stack */
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .location-pill {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mini-categories {
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+
+    /* Old scroll buttons hide */
+    .scroll-btn {
+        display: none !important;
+    }
+
+    .carousel-wrapper {
+        margin: 0 -15px; 
+        padding: 0 15px;
+    }
+
+    /* Enable carousel touch scroll */
+    .product-scroll {
+        padding: 20px 10px;
+        width: calc(100% + 15px);
+    }
+    
+    /* Profile stacking specific fixes */
     .profile-container {
         flex-direction: column;
+        padding: 20px 15px;
     }
     .activity-sidebar {
         width: 100%;
@@ -950,10 +960,131 @@ footer {
     .profile-details-left {
         border-right: none;
         border-bottom: 1px solid #ccc;
+        padding-right: 0;
         padding-bottom: 20px;
     }
     .profile-details-right {
         padding-left: 0;
         padding-top: 10px;
+    }
+}
+
+/* --- Small Screens (Phones/Portrait) (< 600px) --- */
+@media (max-width: 600px) {
+
+    /* --- Header Tendering --- */
+    header {
+        padding: 10px;
+        gap: 5px;
+    }
+
+    .logo {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+
+    /* CRITICAL NAV FIX: Vertically stack links */
+    nav {
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        align-items: center;
+        order: 3;
+    }
+    
+    nav a {
+        width: 100%; /* Links are full rows */
+        margin: 0;
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(0,0,0,0.05); /* Separator line */
+    }
+    
+    nav a:hover {
+        background-color: #f3efe7;
+    }
+
+    /* CRITICAL BUTTON FIX: Stack auth buttons full-width */
+    .auth-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        order: 2;
+        margin-top: 10px;
+    }
+
+    button {
+        width: 90%; /* Stack and fill phone */
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 15px;
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    /* --- Hero Scaling Fixes --- */
+    .hero-content {
+        padding: 0 10px;
+    }
+
+    /* Prevents H1 text shadow/scaling from breaking layout */
+    h1 {
+        font-size: clamp(1.8rem, 7vw, 2.5rem); 
+        text-shadow: 2px 2px 0px #1a2e1a; 
+        line-height: 1.2;
+    }
+
+    .search-container {
+        width: 95%;
+        max-width: none;
+        margin: 0 auto 40px auto;
+    }
+
+    /* CRITICAL CATEGORIES FIX: 2x2 Grid instead of sqaushed list */
+    .categories-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2x2 GRID */
+        gap: 15px;
+        width: 100%;
+    }
+
+    .category-item {
+        width: 100%; /* Fill grid cell */
+    }
+    
+    .circle {
+        width: 70px;
+        height: 70px;
+    }
+
+    .circle i {
+        font-size: 28px;
+    }
+    
+    .category-item span {
+        font-size: 13px;
+    }
+
+    /* --- Content Area/Carousel Overhaul --- */
+    
+    .product-scroll {
+        overflow-x: scroll; /* Enable native horizontal scroll */
+        -webkit-overflow-scrolling: touch; 
+        scroll-snap-type: x mandatory; /* Snap to cards */
+        gap: 15px;
+    }
+
+    .product-card {
+        min-width: calc(100% - 30px); /* 1 card fills full width minus margins */
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        scroll-snap-align: start; /* Align snap to card start */
+    }
+
+    /* --- Problem Section Stack --- */
+    .problem-description-row, .what-is-problem, .sdg-asset-col {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
     }
 }
